@@ -4,16 +4,18 @@ class FinancialEntity {
   final int id;
   final String description;
   final double value;
-  final int assement;
+  final int installments;
   double? totalValue;
   final FinancialType type;
+  final bool paid;
 
   FinancialEntity(
       {required this.id,
       required this.description,
       required this.value,
-      required this.assement,
-      required this.type}){
-        totalValue = value * assement;
+      required this.installments,
+      required this.type,
+      required this.paid}){
+        totalValue = value * installments;
       }
 }
