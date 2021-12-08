@@ -1,4 +1,5 @@
 class FinancialEntity {
+  final int id;
   final String description;
   final double value;
   final int assement;
@@ -6,7 +7,8 @@ class FinancialEntity {
   final type;
 
   FinancialEntity(
-      {required this.description,
+      {required this.id,
+      required this.description,
       required this.value,
       required this.assement,
       required this.totalValue,

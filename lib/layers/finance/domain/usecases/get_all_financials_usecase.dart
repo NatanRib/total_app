@@ -1,5 +1,5 @@
 import '../entities/financial_entity.dart';
 
-abstract class GetAllFinancialUsecase {
+abstract class GetAllFinancialsUsecase {
   List<FinancialEntity> call();
 }
