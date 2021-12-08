@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:total_app/layers/finance/data/datasources/get_financial_data_source.dart';
-import 'package:total_app/layers/finance/data/usecases/get_financial_usecase.dart';
+import 'package:total_app/layers/finance/data/usecases/get_financial_usecase_impl.dart';
 
 import 'package:mocktail/mocktail.dart';
 import 'package:total_app/layers/finance/domain/entities/financial_entity.dart';
@@ -16,7 +16,7 @@ void main() {
 
   setUp((){  
     //arrange
-    financialEntityTest =  FinancialEntity(assement: 2, type: FinancialType.active, id: 1, description: "Cerca", value: 100); 
+    financialEntityTest =  FinancialEntity(installments: 2, type: FinancialType.active, id: 1, description: "Cerca", value: 100, paid: false); 
     getFinancialDataSource = GetFinancialDataSourceMock();
     systemUnderTest = GetFinancialUsecaseImpl(getFinancialDataSource: getFinancialDataSource);
   });
@@ -31,7 +31,7 @@ void main() {
     
   });
 
-  test('Should return especific financial by id', ()async{
+  test('Should call the method and return especific financial by id', ()async{
     //Arrange
     when(()=> getFinancialDataSource(2)).thenAnswer((_) async => financialEntityTest);
     //Act
