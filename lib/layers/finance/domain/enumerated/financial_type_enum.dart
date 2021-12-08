@@ -1,0 +1,4 @@
+enum FinancialType{
+  active,
+  passive
+} 
