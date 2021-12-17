@@ -1,7 +1,7 @@
-import 'package:total_app/layers/finance/data/datasources/update_financial_data_source.dart';
-import 'package:total_app/layers/finance/data/errors/invalid_financial_update_error.dart';
-import 'package:total_app/layers/finance/domain/entities/financial_entity.dart';
-import 'package:total_app/layers/finance/domain/usecases/update_financial_usecase.dart';
+import '../../data/datasources/update_financial_data_source.dart';
+import '../../data/errors/invalid_financial_update_error.dart';
+import '../../domain/entities/financial_entity.dart';
+import '../../domain/usecases/update_financial_usecase.dart';
 
 class UpdateFinancialUsecaseImpl implements UpdateFinancialUsecase{
   UpdateFinancialDatasource updateFinancialDatasource;

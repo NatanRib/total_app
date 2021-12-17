@@ -1,4 +1,4 @@
-import 'package:total_app/layers/finance/domain/enumerated/financial_type_enum.dart';
+import '../../domain/enumerated/financial_type_enum.dart';
 
 class FinancialEntity {
   final int id;

@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:total_app/layers/finance/data/datasources/get_financial_data_source.dart';
-import 'package:total_app/layers/finance/data/usecases/get_financial_usecase_impl.dart';
+import 'package:total_app/features/finance/data/datasources/get_financial_data_source.dart';
+import 'package:total_app/features/finance/data/usecases/get_financial_usecase_impl.dart';
+import 'package:total_app/features/finance/domain/entities/financial_entity.dart';
+import 'package:total_app/features/finance/domain/enumerated/financial_type_enum.dart';
 
 import 'package:mocktail/mocktail.dart';
-import 'package:total_app/layers/finance/domain/entities/financial_entity.dart';
-import 'package:total_app/layers/finance/domain/enumerated/financial_type_enum.dart';
 
 class GetFinancialDataSourceMock extends Mock implements GetFinancialDataSource{} 
 

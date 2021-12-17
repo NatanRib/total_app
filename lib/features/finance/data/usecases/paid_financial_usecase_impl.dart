@@ -1,5 +1,5 @@
-import 'package:total_app/layers/finance/data/datasources/paid_financial_data_source.dart';
-import 'package:total_app/layers/finance/domain/usecases/paid_financial_usecase.dart';
+import '../../data/datasources/paid_financial_data_source.dart';
+import '../../domain/usecases/paid_financial_usecase.dart';
 
 class PaidFinancialUsecaseImpl implements PaidFinancialUsecase{
   PaidFinancialDataSource paidFinancialDataSource;
