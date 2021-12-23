@@ -24,10 +24,10 @@ void main() {
 
   test('Should call datasource to update a financial by id and return updated financial', () async {
     //Arrange
-    when(()=> updateFinancialDatasource(updated, 1)).thenAnswer((_) async => updated);
+    when(()=> updateFinancialDatasource(updatedFinancial: updated,id: 1)).thenAnswer((_) async => updated);
     
     //Act
-    FinancialEntity result = await systemUnderTest(updated, 1);
+    FinancialEntity result = await systemUnderTest(updatedFinancial: updated,id: 1);
     
     //Assert
     expect(result, updated);
@@ -35,6 +35,6 @@ void main() {
 
   test('Should throw InvalidFinancialUpdateError because the financial ids are diferent', () async {
     //Assert
-    expect(()=> systemUnderTest(updated, 2), throwsA(isA<InvalidFinancialUpdateError>()));
+    expect(()=> systemUnderTest(updatedFinancial: updated,id: 2), throwsA(isA<InvalidFinancialUpdateError>()));
   });
 }

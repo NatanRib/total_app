@@ -13,9 +13,9 @@ void main() {
     CreateFinancialDataSource createFinancialDataSource = CreateFinancialDataSourceMock();
     CreateFinancialUsecase systemUnderTest = CreateFinancialUsecaseImpl(createFinancialDatasource: createFinancialDataSource);
     FinancialEntity financial = FinancialEntity(id: 2, description: 'teste', value: 120.0, installments: 5, type: FinancialType.passive, paid: false);
-    when(()=> createFinancialDataSource(financial)).thenAnswer((_) async=> financial.id);
+    when(()=> createFinancialDataSource(financial: financial)).thenAnswer((_) async=> financial.id);
 
-    final result = await systemUnderTest(financial);
+    final result = await systemUnderTest(financial: financial);
 
     expect(result, financial.id); 
   });

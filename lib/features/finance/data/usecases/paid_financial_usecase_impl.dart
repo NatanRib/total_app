@@ -6,7 +6,7 @@ class PaidFinancialUsecaseImpl implements PaidFinancialUsecase{
   PaidFinancialUsecaseImpl({required this.paidFinancialDataSource});
 
   @override
-  void call(int id) {
+  void call({required int id}) {
     paidFinancialDataSource(id);
   }
 }

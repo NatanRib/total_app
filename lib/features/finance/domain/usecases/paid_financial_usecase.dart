@@ -1,3 +1,3 @@
 abstract class PaidFinancialUsecase{
-  void call(int id);
+  void call({required int id});
 }

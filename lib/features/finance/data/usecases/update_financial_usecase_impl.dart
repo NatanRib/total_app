@@ -8,11 +8,11 @@ class UpdateFinancialUsecaseImpl implements UpdateFinancialUsecase{
   UpdateFinancialUsecaseImpl({required this.updateFinancialDatasource});
   
   @override
-  Future<FinancialEntity> call(FinancialEntity newFinancial, int id) {
-    if (newFinancial.id != id){
+  Future<FinancialEntity> call({required FinancialEntity updatedFinancial, required int id}) {
+    if (updatedFinancial.id != id){
       throw InvalidFinancialUpdateError();
     }
-    return updateFinancialDatasource(newFinancial, id);
+    return updateFinancialDatasource(updatedFinancial: updatedFinancial, id: id);
   }
   
 }

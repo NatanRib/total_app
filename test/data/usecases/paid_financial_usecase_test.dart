@@ -15,7 +15,7 @@ void main() {
     PaidFinancialUsecase systemUnderTest = PaidFinancialUsecaseImpl(paidFinancialDataSource: paidFinancialDataSource);
 
     //Act
-    systemUnderTest(2);
+    systemUnderTest(id: 2);
     
     //Assert
     verify(()=> paidFinancialDataSource(2)).called(1);

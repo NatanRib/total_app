@@ -7,7 +7,7 @@ class GetFinancialUsecaseImpl implements GetFinancialUsecase {
   GetFinancialUsecaseImpl({required this.getFinancialDataSource});
 
   @override
-  Future<FinancialEntity> call(int id) {
-    return getFinancialDataSource(id);
+  Future<FinancialEntity> call({required int id}) {
+    return getFinancialDataSource(id: id);
   }
 }

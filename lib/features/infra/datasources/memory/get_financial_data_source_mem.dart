@@ -4,7 +4,7 @@ import 'package:total_app/features/finance/domain/enumerated/financial_type_enum
 
 class GetFinancialDataSourceMem implements GetFinancialDataSource {
   @override
-  Future<FinancialEntity> call(int id) async {
+  Future<FinancialEntity> call({required int id}) async {
     late FinancialEntity result;
     await Future.delayed(const Duration(seconds: 5), () {
       result = FinancialEntity(

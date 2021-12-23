@@ -23,19 +23,19 @@ void main() {
 
   test('Should call getFinancialRepository to get especific financial', (){
     //Arrange
-    when(()=> getFinancialDataSource(2)).thenAnswer((_) async => financialEntityTest);
+    when(()=> getFinancialDataSource(id: 2)).thenAnswer((_) async => financialEntityTest);
     //Act
-    systemUnderTest(2);
+    systemUnderTest(id: 2);
     //Assert
-    verify(()=> getFinancialDataSource(2)).called(1);
+    verify(()=> getFinancialDataSource(id: 2)).called(1);
     
   });
 
   test('Should call the method and return especific financial by id', ()async{
     //Arrange
-    when(()=> getFinancialDataSource(2)).thenAnswer((_) async => financialEntityTest);
+    when(()=> getFinancialDataSource(id: 2)).thenAnswer((_) async => financialEntityTest);
     //Act
-    final test = await systemUnderTest(2);
+    final test = await systemUnderTest(id: 2);
     //Assert
     expect(test, financialEntityTest);
   });

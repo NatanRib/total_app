@@ -10,7 +10,7 @@ main() {
     FinancialEntity entityTest = FinancialEntity(id: 1, description: 'description', value: 1900, installments: 3, type: FinancialType.active, paid: false); 
 
     //Act
-    final result = await systemUnderTest(entityTest);
+    final result = await systemUnderTest(financial: entityTest);
 
     //Assert
     expect(result, 1);

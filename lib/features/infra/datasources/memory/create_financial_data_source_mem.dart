@@ -3,7 +3,7 @@ import 'package:total_app/features/finance/domain/entities/financial_entity.dart
 
 class CreateFinancialDatasoruceMem implements CreateFinancialDataSource {
   @override
-  Future<int> call(FinancialEntity financial) async {
+  Future<int> call({required FinancialEntity financial}) async {
     late int id;
     await Future.delayed(const Duration(seconds: 5), () {
       id = 1;

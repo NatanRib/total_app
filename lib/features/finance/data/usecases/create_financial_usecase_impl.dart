@@ -7,8 +7,8 @@ class CreateFinancialUsecaseImpl implements CreateFinancialUsecase{
   CreateFinancialUsecaseImpl({required this.createFinancialDatasource});
 
   @override
-  Future<int> call(FinancialEntity financial) {
-    return createFinancialDatasource(financial);
+  Future<int> call({required FinancialEntity financial}) {
+    return createFinancialDatasource(financial: financial);
   }
   
 }
