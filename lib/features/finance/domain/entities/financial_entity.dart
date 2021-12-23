@@ -5,7 +5,7 @@ class FinancialEntity {
   final String description;
   final double value;
   final int installments;
-  double? totalValue;
+  late double totalValue;
   final FinancialType type;
   final bool paid;
 
