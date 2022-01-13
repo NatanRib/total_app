@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:total_app/features/finance/domain/entities/financial_entity.dart';
-import 'package:total_app/features/finance/domain/enumerated/financial_type_enum.dart';
+import 'package:total_app/modules/finance/domain/entities/financial_entity.dart';
+import 'package:total_app/modules/finance/domain/enumerated/financial_type_enum.dart';
 
 main(){
 

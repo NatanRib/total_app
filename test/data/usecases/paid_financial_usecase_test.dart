@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:total_app/features/finance/data/datasources/paid_financial_data_source.dart';
-import 'package:total_app/features/finance/data/usecases/paid_financial_usecase_impl.dart';
-import 'package:total_app/features/finance/domain/usecases/paid_financial_usecase.dart';
+import 'package:total_app/modules/finance/data/datasources/paid_financial_data_source.dart';
+import 'package:total_app/modules/finance/data/usecases/paid_financial_usecase_impl.dart';
+import 'package:total_app/modules/finance/domain/usecases/paid_financial_usecase.dart';
 
 import 'package:mocktail/mocktail.dart';
 

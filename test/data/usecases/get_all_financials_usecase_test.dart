@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:total_app/features/finance/data/usecases/get_all_financials_usecase_impl.dart';
-import 'package:total_app/features/finance/data/datasources/get_all_financials_data_source.dart';
+import 'package:total_app/modules/finance/data/usecases/get_all_financials_usecase_impl.dart';
+import 'package:total_app/modules/finance/data/datasources/get_all_financials_data_source.dart';
 
 import 'package:mocktail/mocktail.dart';
 

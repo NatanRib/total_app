@@ -1,5 +1,5 @@
-import 'package:total_app/features/finance/data/datasources/create_financial_datasource.dart';
-import 'package:total_app/features/finance/domain/entities/financial_entity.dart';
+import '../../../data/datasources/create_financial_datasource.dart';
+import '../../../domain/entities/financial_entity.dart';
 
 class CreateFinancialDatasoruceMem implements CreateFinancialDataSource {
   @override

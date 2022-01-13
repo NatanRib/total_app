@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:total_app/features/finance/data/datasources/update_financial_data_source.dart';
-import 'package:total_app/features/finance/data/errors/invalid_financial_update_error.dart';
-import 'package:total_app/features/finance/data/usecases/update_financial_usecase_impl.dart';
-import 'package:total_app/features/finance/domain/entities/financial_entity.dart';
-import 'package:total_app/features/finance/domain/enumerated/financial_type_enum.dart';
-import 'package:total_app/features/finance/domain/usecases/update_financial_usecase.dart';
+import 'package:total_app/modules/finance/data/datasources/update_financial_data_source.dart';
+import 'package:total_app/modules/finance/data/errors/invalid_financial_update_error.dart';
+import 'package:total_app/modules/finance/data/usecases/update_financial_usecase_impl.dart';
+import 'package:total_app/modules/finance/domain/entities/financial_entity.dart';
+import 'package:total_app/modules/finance/domain/enumerated/financial_type_enum.dart';
+import 'package:total_app/modules/finance/domain/usecases/update_financial_usecase.dart';
 
 import 'package:mocktail/mocktail.dart';
 

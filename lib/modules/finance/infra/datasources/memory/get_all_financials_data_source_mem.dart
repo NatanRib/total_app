@@ -1,6 +1,6 @@
-import 'package:total_app/features/finance/data/datasources/get_all_financials_data_source.dart';
-import 'package:total_app/features/finance/domain/entities/financial_entity.dart';
-import 'package:total_app/features/finance/domain/enumerated/financial_type_enum.dart';
+import '../../../data/datasources/get_all_financials_data_source.dart';
+import '../../../domain/entities/financial_entity.dart';
+import '../../../domain/enumerated/financial_type_enum.dart';
 
 class GetAllFinancialsDataSourceMem implements GetAllFinancialsDataSource {
   @override
