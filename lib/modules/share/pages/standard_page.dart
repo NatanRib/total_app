@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import '../widgets/navigation_menu.dart';
 
 class StandardPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class StandardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TOTAL APP'),
+        title: GestureDetector(child: const Text('TOTAL APP'), onTap: ()=> Modular.to.navigate('/'),),
         centerTitle: true,
       ),
       drawer: const NavigationMenu(),

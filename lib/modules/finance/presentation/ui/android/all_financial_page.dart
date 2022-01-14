@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:total_app/modules/share/pages/standard_page.dart';
 
 import '../../../domain/entities/financial_entity.dart';
 import '../../../presentation/controllers/all_financials_controller.dart';
 import './financial_detail_page.dart';
 
 class AllFinancialPage extends StatefulWidget {
-  
-  const AllFinancialPage({Key? key})
-      : super(key: key);
+  const AllFinancialPage({Key? key}) : super(key: key);
 
   @override
   _AllFinancialPageState createState() => _AllFinancialPageState();
 }
 
 class _AllFinancialPageState extends State<AllFinancialPage> {
-    final AllFinancialController controller = Modular.get<AllFinancialController>();
-  
+  final AllFinancialController controller =
+      Modular.get<AllFinancialController>();
+
   @override
   void dispose() {
     controller.close();
@@ -31,11 +31,8 @@ class _AllFinancialPageState extends State<AllFinancialPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Finanças'),
-        ),
-        body: StreamBuilder<List<FinancialEntity>>(
+    return StandardPage(
+        content: StreamBuilder<List<FinancialEntity>>(
             stream: controller.stream,
             initialData: const <FinancialEntity>[],
             builder: (context, snapshot) {
@@ -44,14 +41,17 @@ class _AllFinancialPageState extends State<AllFinancialPage> {
                   : snapshot.hasError
                       ? Center(child: Text('${snapshot.error}'))
                       : Column(children: [
+                          Container(
+                              padding: const EdgeInsets.only(left: 3, right: 3),
+                              height:
+                                  MediaQuery.of(context).size.height / 2 - 30,
+                              width: MediaQuery.of(context).size.width,    
+                              child: const Card(
+                                color: Colors.white,
+                                child: Text('Insights here!'),
+                              )),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height / 2 -30,
-                            child: const Card(
-                              color: Colors.white,
-                              child: Text('Insights here!'),
-                            )),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height /2 -30,
+                            height: MediaQuery.of(context).size.height / 2 - 30,
                             child: ListView.builder(
                                 itemCount: snapshot.data!.length,
                                 itemBuilder: (context, index) {
@@ -59,21 +59,24 @@ class _AllFinancialPageState extends State<AllFinancialPage> {
                                   return Padding(
                                     padding: const EdgeInsets.only(
                                         right: 8.0, top: 5.0),
-                                    child: ListTile(
-                                      tileColor: Colors.white,
-                                      shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(10),
-                                              bottomRight: Radius.circular(10))),
-                                      title: Text(items![index].description),
-                                      trailing: Text(
-                                          '${items[index].totalValue.toStringAsFixed(2)} em ${items[index].installments} X'),
-                                      onTap: () => Navigator.pushAndRemoveUntil(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const FinancialDetailPage()),
-                                          (route) => false),
+                                    child: Card(
+                                      child: ListTile(
+                                        tileColor: Colors.white,
+                                        shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(10),
+                                                bottomRight:
+                                                    Radius.circular(10))),
+                                        title: Text(items![index].description),
+                                        trailing: Text(
+                                            '${items[index].totalValue.toStringAsFixed(2)} em ${items[index].installments} X'),
+                                        onTap: () => Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const FinancialDetailPage()),
+                                            (route) => false),
+                                      ),
                                     ),
                                   );
                                 }),
